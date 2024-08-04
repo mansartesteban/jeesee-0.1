@@ -1,0 +1,16 @@
+{
+  "name": "jeesee-0.1",
+  "version": "0.0.0",
+  "description": "Yet another version of this project XD",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node server/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
