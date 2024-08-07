@@ -1,23 +1,19 @@
 import ArrayUtils from "@/application/engine/lib/Arrays";
 import Component from "@/application/engine/core/Component";
-// import TransformComponent from "@/application/engine/Components/DefaultComponents/TransformComponent";
 import Scene from "@/application/engine/core/Scene";
 import ImplementError from "../../error/ImplementError";
 
 class Entity {
   components: Component[] = [];
-  datas: { [name: string]: any } = {};
 
   scene: Scene;
-
-  // transform: TransformComponent = new TransformComponent();
 
   constructor(scene: Scene, ...components: Component[]) {
     this.components = components;
     this.scene = scene;
     this.scene.addEntity(this);
-    this.setup();
-    // this.components.push(this.transform);
+
+    setTimeout(this.setup.bind(this), 0);
   }
 
   addComponent(component: Component) {

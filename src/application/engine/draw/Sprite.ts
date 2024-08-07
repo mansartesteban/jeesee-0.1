@@ -20,7 +20,7 @@ class Sprite implements IDrawable {
     this.#path = path;
     this.#columns = options.columns || 1;
     this.#rows = options.rows || 1;
-    this.#count = options.count || 1;
+    this.#count = this.#rows * this.#columns || 1;
     this.#scale = options.scale || 1;
     this.offsetRotation = options.offsetRotation || new Rotation();
     this.#current = 0;
@@ -29,6 +29,14 @@ class Sprite implements IDrawable {
     this.#imgLoaded = false;
 
     this.#loadImage();
+  }
+
+  get current() {
+    return this.#current;
+  }
+
+  set current(position: number) {
+    this.#current = position;
   }
 
   #loadImage() {
@@ -47,8 +55,8 @@ class Sprite implements IDrawable {
 
   prev(steps: number = 1) {
     this.#current -= steps;
-    if (this.#current > this.#count - 1) {
-      this.#current = 0;
+    if (this.#current < 0) {
+      this.#current = this.#count - 1;
     }
   }
 

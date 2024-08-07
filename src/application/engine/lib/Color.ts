@@ -1,4 +1,4 @@
-import MathUtils from "@/application/engine/lib/Numeric";
+import NumericUtils from "@/application/engine/lib/Numeric";
 
 /**
  * A helper class to handle colors with rgba channels
@@ -51,7 +51,7 @@ class Color {
    * Sets the red channel from 0 to 255
    */
   set r(r: number) {
-    this.#r = MathUtils.clamp(r, 0, 255);
+    this.#r = NumericUtils.clamp(r, 0, 255);
   }
 
   /**
@@ -65,7 +65,7 @@ class Color {
    * Sets the green channel from 0 to 255
    */
   set g(g: number) {
-    this.#g = MathUtils.clamp(g, 0, 255);
+    this.#g = NumericUtils.clamp(g, 0, 255);
   }
 
   /**
@@ -79,7 +79,7 @@ class Color {
    * Sets the blue channel from 0 to 255
    */
   set b(b: number) {
-    this.#b = MathUtils.clamp(b, 0, 255);
+    this.#b = NumericUtils.clamp(b, 0, 255);
   }
 
   /**
@@ -93,7 +93,7 @@ class Color {
    * Sets the opacity channel from 0 to 1
    */
   set opacity(opacity: number) {
-    this.#opacity = MathUtils.clamp(opacity, 0, 1);
+    this.#opacity = NumericUtils.clamp(opacity, 0, 1);
   }
 
   /**
@@ -112,7 +112,7 @@ class Color {
       parseInt(this.r.toFixed(0)).toString(16).padStart(2, "0") +
       parseInt(this.g.toFixed(0)).toString(16).padStart(2, "0") +
       parseInt(this.b.toFixed(0)).toString(16).padStart(2, "0") +
-      parseInt(MathUtils.mapRange(this.opacity, 0, 1, 0, 255).toFixed(0))
+      parseInt(NumericUtils.mapRange(this.opacity, 0, 1, 0, 255).toFixed(0))
         .toString(16)
         .padStart(2, "0")
     );

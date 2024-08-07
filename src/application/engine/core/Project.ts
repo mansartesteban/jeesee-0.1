@@ -21,7 +21,7 @@ class Project {
 
   createViewer() {
     let viewer = new Viewer2d({
-      size: new Vector2(window.innerWidth - 20, window.innerHeight - 1),
+      size: new Vector2(window.innerWidth, window.innerHeight),
     });
     let app = document.querySelector("#app");
     if (app) {

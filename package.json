@@ -4,7 +4,8 @@
   "description": "Yet another version of this project XD",
   "main": "index.ts",
   "scripts": {
-    "dev": "node server/main.js",
+    "dev": "pnpm i && vite",
+    "serve": "node server/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,4 +1,4 @@
-import MathUtils from "@/application/engine/lib/Numeric";
+import NumericUtils from "@/application/engine/lib/Numeric";
 import Color from "@/application/engine/lib/Color";
 import Rotation from "@/application/engine/lib/geometry/Rotation";
 import Vector2 from "@/application/engine/lib/geometry/Vector2";
@@ -47,7 +47,7 @@ class DebugVector implements IDrawable {
       ctx.lineWidth = this.#thickness;
       ctx.fillStyle = this.#color._toString;
 
-      let arrowSize = MathUtils.clamp(this.#thickness * 3, 10, 1000);
+      let arrowSize = NumericUtils.clamp(this.#thickness * 3, 10, 1000);
       if (Vector2.from(this.from).to(this.to).length <= arrowSize) {
         let color = this.#frame % 4 < 2 ? "#ff0000" : "#ffffff";
         ctx.strokeStyle = color;

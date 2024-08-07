@@ -7,10 +7,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.join(root, "src"),
-      "@gameengine": path.join(root, "src", "Application", "GameEngine"),
-      "@ui": path.join(root, "src", "Application", "UI"),
-      "@commons": path.join(root, "src", "Application", "Commons"),
-      "@styles": path.join(root, "assets", "styles"),
     },
   },
   module: {

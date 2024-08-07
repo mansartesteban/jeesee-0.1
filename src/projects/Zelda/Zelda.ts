@@ -2,9 +2,9 @@ import Project from "@/application/engine/core/Project";
 import Character from "./Scenes/Character/Character";
 import Scene from "../../application/engine/core/Scene";
 
-class Tetris extends Project {
+class Zelda extends Project {
   options: TProjectOptions = {
-    name: "Tetris",
+    name: "Zelda",
     engine: "2d",
   };
 
@@ -18,4 +18,4 @@ class Tetris extends Project {
   }
 }
 
-export default Tetris;
+export default Zelda;

@@ -1,8 +1,8 @@
 import Application from "./application/Application";
-import Tetris from "./projects/Tetris/Tetris";
+import Zelda from "./projects/Zelda/Zelda";
 
 Application.start().then(() => {
-  Application.loadProject(Tetris);
+  Application.loadProject(Zelda);
 });
 
 import "@/assets/styles/main.scss";

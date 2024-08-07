@@ -1,0 +1,11 @@
+export const enum LISTENER_CONFIG {
+  REGISTERING = 1,
+  UNREGISTERING = 2,
+  EMITTING = 4,
+}
+
+class Config {
+  static listener = 0; //LISTENER_CONFIG.REGISTERING | LISTENER_CONFIG.UNREGISTERING | LISTENER_CONFIG.EMITTING
+}
+
+export default Config;

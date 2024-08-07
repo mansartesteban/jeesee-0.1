@@ -1,4 +1,4 @@
-import MathUtils from "@/Application/Engine/Lib/Math";
+import NumericUtils from "@/Application/Engine/Lib/Math";
 import Color from "@/Application/Engine/Lib/Color";
 import Line from "@/application/engine/draw/Line";
 import Text from "@/application/engine/draw/Text";
@@ -84,7 +84,7 @@ class Grid {
   }
 
   set zoom(zoom: number) {
-    this.#zoom = MathUtils.clamp(Math.round(zoom * 10) / 10, 0.1, 10);
+    this.#zoom = NumericUtils.clamp(Math.round(zoom * 10) / 10, 0.1, 10);
   }
 
   /**
@@ -126,12 +126,12 @@ class Grid {
     let min =
       this.xMin + ((this.origin.x - this.xMin) % (this.tileSize * this.zoom));
     for (let i = min; i < this.xMax; i += this.tileSize * this.zoom) {
-      if (MathUtils.isBetween(i, this.xMin, this.xMax)) {
-        i = MathUtils.num(i);
+      if (NumericUtils.isBetween(i, this.xMin, this.xMax)) {
+        i = NumericUtils.num(i);
         line.from = new Vector2(i, this.yMin);
         line.to = new Vector2(i, this.yMax);
 
-        coordinatesDisplay.text = MathUtils.num(
+        coordinatesDisplay.text = NumericUtils.num(
           (i - this.origin.x) * (1 / this.zoom)
         ).toString();
         coordinatesDisplay.position = line.from.copy().add(new Vector2(0, 12));
@@ -168,12 +168,12 @@ class Grid {
     let min =
       this.yMin + ((this.origin.y - this.yMin) % (this.tileSize * this.zoom));
     for (let i = min; i < this.yMax; i += this.tileSize * this.zoom) {
-      if (MathUtils.isBetween(i, this.yMin, this.yMax)) {
-        i = MathUtils.num(i);
+      if (NumericUtils.isBetween(i, this.yMin, this.yMax)) {
+        i = NumericUtils.num(i);
         line.from = new Vector2(this.xMin, i);
         line.to = new Vector2(this.xMax, i);
 
-        coordinatesDisplay.text = MathUtils.num(
+        coordinatesDisplay.text = NumericUtils.num(
           (i - this.origin.y) * (1 / this.zoom)
         ).toString();
         coordinatesDisplay.position = line.from.copy().add(new Vector2(30, 0));

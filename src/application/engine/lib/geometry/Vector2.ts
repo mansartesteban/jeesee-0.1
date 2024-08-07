@@ -1,4 +1,4 @@
-import MathUtils from "@/application/engine/lib/Numeric";
+import NumericUtils from "@/application/engine/lib/Numeric";
 import Color from "@/application/engine/lib/Color";
 import DebugVector from "@/application/engine/draw/DebugVector";
 import Rotation from "@/application/engine/lib/geometry/Rotation";
@@ -221,7 +221,7 @@ class Vector2 {
    * @returns this Returns this for methods chaining
    */
   lerp(target: Vector2, weight: number): this {
-    weight = MathUtils.clamp(weight, 0, 1);
+    weight = NumericUtils.clamp(weight, 0, 1);
     this.x = (1 - weight) * this.x + weight * target.x;
     this.y = (1 - weight) * this.y + weight * target.y;
     return this;

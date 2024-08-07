@@ -1,4 +1,4 @@
-import MathUtils from "@/application/engine/lib/Numeric";
+import NumericUtils from "@/application/engine/lib/Numeric";
 
 class ArrayUtils {
   static findIndexMultiple(array: any[], callbackCondition: Function) {
@@ -20,7 +20,7 @@ class ArrayUtils {
   static pickRandom(array: [] = [], count: number = 1) {
     let ret: any[] = [];
     for (let i = 0; i < count; i++) {
-      ret.push(array[MathUtils.random(0, array.length - 1)]);
+      ret.push(array[NumericUtils.random(0, array.length - 1)]);
     }
 
     return count === 1 ? ret[0] : ret;

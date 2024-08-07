@@ -1,4 +1,4 @@
-import MathUtils from "../Numeric";
+import NumericUtils from "../Numeric";
 /**
  * A helper class which angle rotation (i.e. angle) and simplify conversion to radians or degrees
  */
@@ -16,7 +16,7 @@ class Rotation {
    * @param asRadian Indicates if the give 'angle' is in radians or in degrees
    */
   constructor(angle: number = 0, asRadian: Boolean = false) {
-    this.#angle = asRadian ? angle : MathUtils.degreesToRadians(angle);
+    this.#angle = asRadian ? angle : NumericUtils.degreesToRadians(angle);
   }
 
   /**
@@ -32,7 +32,7 @@ class Rotation {
    * @param asRadian Indicates if the give 'angle' is in radians or in degrees
    */
   setAngle(angle: number, asRadian: Boolean = false) {
-    this.#angle = asRadian ? angle : MathUtils.degreesToRadians(angle);
+    this.#angle = asRadian ? angle : NumericUtils.degreesToRadians(angle);
   }
 
   /**
@@ -46,7 +46,7 @@ class Rotation {
    * Returns the current angle in degrees
    */
   get toDegrees() {
-    return MathUtils.radiansToDegrees(this.angle);
+    return NumericUtils.radiansToDegrees(this.angle);
   }
 
   /**

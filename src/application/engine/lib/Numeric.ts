@@ -1,4 +1,4 @@
-class MathUtils {
+class NumericUtils {
   static num(number: number = 0, precision = 4): number {
     let factor = Math.pow(10, precision);
     let n = precision < 0 ? number : 0.01 / factor + number;
@@ -43,4 +43,4 @@ class MathUtils {
   }
 }
 
-export default MathUtils;
+export default NumericUtils;
