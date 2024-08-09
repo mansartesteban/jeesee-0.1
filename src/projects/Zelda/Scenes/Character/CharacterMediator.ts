@@ -1,11 +1,14 @@
+import MediatorComponent from "../../../../application/engine/core/Components/MediatorComponent";
 import CharacterBehaviour, { direction } from "./CharacterBehaviour";
 import CharacterRenderer from "./CharacterRenderer";
 
-class CharacterMediator {
+class CharacterMediator extends MediatorComponent {
   characterRenderer?: CharacterRenderer;
   characterBehaviour?: CharacterBehaviour;
 
-  constructor() {}
+  constructor() {
+    super();
+  }
 
   addBehaviour(behaviour: CharacterBehaviour) {
     this.characterBehaviour = behaviour;

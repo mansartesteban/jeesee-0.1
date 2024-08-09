@@ -1,6 +1,7 @@
 import Project from "@/application/engine/core/Project";
 import Character from "./Scenes/Character/Character";
 import Scene from "../../application/engine/core/Scene";
+import Inputs from "../../application/engine/Inputs";
 
 class Zelda extends Project {
   options: TProjectOptions = {
@@ -8,6 +9,7 @@ class Zelda extends Project {
     engine: "2d",
   };
 
+  inputs?: Inputs;
   constructor() {
     super();
   }
@@ -15,6 +17,11 @@ class Zelda extends Project {
   setup() {
     this.addScene(new Scene("main", this.viewer));
     let character = new Character(this.getScene("main"));
+
+    this.inputs = new Inputs(document.body);
+  }
+  loop() {
+    console.log(this.inputs?.collector);
   }
 }
 

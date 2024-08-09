@@ -1,8 +1,12 @@
+import Observer from "../../commons/Observer";
 import ImplementError from "../../error/ImplementError";
 import Vector2 from "../lib/geometry/Vector2";
 import Scene from "./Scene";
 import Viewer2d from "./Viewers/Viewer2d";
 
+enum Events {
+  INITIALIZED = "INITIALIZED",
+}
 class Project {
   scenes: Scene[] = [];
   options: TProjectOptions = {
@@ -12,11 +16,16 @@ class Project {
 
   viewer: Viewer2d;
 
+  loopCallback?: Function;
+
+  observer: Observer;
+
   constructor(options?: TProjectOptions) {
     this.options = { ...this.options, ...options };
 
     this.viewer = this.createViewer();
-    this.setup();
+    this.observer = new Observer(Object.keys(Events));
+    setTimeout(this.setup.bind(this), 0);
   }
 
   createViewer() {
@@ -47,6 +56,8 @@ class Project {
   setup() {
     throw new ImplementError("setup", "Project");
   }
+
+  loop() {}
 }
 
 export default Project;
